@@ -1,0 +1,68 @@
+<!-- meta tags and other links -->
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png" sizes="16x16">
+</head>
+
+<body>
+    <app-menu></app-menu>
+
+    <main class="dashboard-main">
+        <app-header></app-header>
+
+        <div class="dashboard-main-body">
+
+            <div class="card basic-data-table">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">Liste des produits</h5>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive"> <!-- Ajoutez cette div -->
+                        <table class="table bordered-table mb-0" id="dataTable" data-page-length='10'>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Id</th>
+                                    <th scope="col">Image</th>
+                                    <th scope="col">Nom</th>
+                                    <th scope="col">Marque</th>
+                                    <th scope="col">Prix</th>
+                                    <th scope="col">Quantite</th>
+                                    <th scope="col">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let produit of listeProduit">
+                                    <td>{{produit.id}}</td>
+                                    <td><img [src]="produit.image" alt="image ici" width="100" height="100"></td>
+                                    <td>
+                                        <h6 class="text-md mb-0 fw-medium flex-grow-1">{{produit.nom}}</h6>
+                                    </td>
+                                    <td>{{produit.marque}}</td>
+                                    <td>{{produit.prix}}dt</td>
+                                    <td>{{produit.quantite}}</td>
+                                    <td>
+                                        <a href="modifierProduit/{{produit.id}}"
+                                            class="w-32-px h-32-px bg-success-focus text-success-main rounded-circle d-inline-flex align-items-center justify-content-center">
+                                            <iconify-icon icon="lucide:edit"></iconify-icon>
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <app-footer></app-footer>
+    </main>
+
+    
+</body>
+
+</html>

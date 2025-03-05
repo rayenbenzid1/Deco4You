@@ -1,0 +1,59 @@
+<!-- meta tags and other links -->
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png" sizes="16x16">
+</head>
+
+<body>
+    <app-menu></app-menu>
+
+    <main class="dashboard-main">
+        <app-header></app-header>
+
+        <div class="dashboard-main-body">
+
+            <div class="card basic-data-table">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">Liste des réservations</h5>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive"> <!-- Ajoutez cette div -->
+                        <table class="table bordered-table mb-0" id="dataTable" data-page-length='10'>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Id</th>
+                                    <th scope="col">Id Client</th>
+                                    <th scope="col">Nom Client</th>
+                                    <th scope="col">Id Produit</th>
+                                    <th scope="col">Nom produit</th>
+                                    <th scope="col">Prix</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let reservation of listReservation">
+                                    <td>{{reservation.id}}</td>
+                                    <td>{{reservation.client.id}}</td>
+                                    <td>{{reservation.client.nom}} {{reservation.client.prenom}}</td>
+                                    <td>{{reservation.produit.id}}</td>
+                                    <td>{{reservation.produit.nom}}</td>
+                                    <td>{{reservation.produit.prix}}dt</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <app-footer></app-footer>
+    </main>
+
+    
+</body>
+
+</html>

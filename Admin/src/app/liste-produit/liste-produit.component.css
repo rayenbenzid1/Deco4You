@@ -1,0 +1,34 @@
+/* Styles pour la table */
+.table-responsive {
+    overflow-x: auto; /* Permet le défilement horizontal */
+    -webkit-overflow-scrolling: touch; /* Améliore le défilement sur les appareils mobiles */
+}
+
+/* Styles pour les cellules de la table */
+.table th,
+.table td {
+    white-space: nowrap; /* Empêche le texte de passer à la ligne */
+}
+
+/* Styles pour les images */
+.table img {
+    max-width: 100px; /* Limite la largeur des images */
+    height: auto; /* Maintient le ratio de l'image */
+}
+
+/* Styles pour les petits écrans */
+@media (max-width: 768px) {
+    .table th,
+    .table td {
+        font-size: 14px; /* Réduire la taille de la police */
+        padding: 8px; /* Réduire le padding */
+    }
+
+    .table img {
+        max-width: 60px; /* Réduire la taille des images sur les petits écrans */
+    }
+
+    .table-responsive {
+        border: 1px solid #ddd; /* Ajouter une bordure pour une meilleure visibilité */
+    }
+}

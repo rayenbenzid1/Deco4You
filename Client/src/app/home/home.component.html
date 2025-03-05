@@ -1,0 +1,75 @@
+<app-menu></app-menu>
+
+<section class="hero-banner">
+    <div class="hero-content">
+        <h1>Naviguer dans notre réseau et découvrir notre produits</h1>
+        <p>Découvrez des produits innovants qui offrent confort et bonheur</p>
+        <a routerLink="produit"><button class="cta-button">Explorez maintenant</button></a>
+    </div>
+</section>
+
+<!-- SLIDER -->
+<section class="slider-container">
+    <div class="slider">
+        <div class="slide" *ngFor="let slide of [
+            { image: '../../assets/images/slider1.jpg', title: 'Qualité supérieure', description: 'Découvrez notre collection exclusive' },
+            { image: '../../assets/images/slider2.avif', title: 'Dernières tendances', description: 'Gardez une longueur d\'avance grâce à nos conceptions innovantes' },
+            { image: '../../assets/images/slider3.jpg', title: 'Offres spéciales', description: 'Offres exclusives pour nos clients' }
+        ]; let i = index" [class.active]="currentSlide === i">
+            <img [src]="slide.image" [alt]="slide.title">
+            <div class="slide-content">
+                <h2>{{slide.title}}</h2>
+                <p>{{slide.description}}</p>
+            </div>
+        </div>
+        <button class="slider-btn prev" (click)="prevSlide()">❮</button>
+        <button class="slider-btn next" (click)="nextSlide()">❯</button>
+        <div class="slider-dots">
+            <span *ngFor="let slide of [1,2,3]; let i = index" class="dot" [class.active]="currentSlide === i"
+                (click)="goToSlide(i)">
+            </span>
+        </div>
+    </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="product-grid">
+    <h2>Produits en vedette</h2>
+    <div class="products-container">
+        <div class="product-card" *ngFor="let product of [
+            { name: 'Coussin Doux', description: 'Un coussin moelleux et coloré pour apporter une touche cosy à votre salon.', price: 45, image: '../../assets/images/produit/coussin.jpeg' },
+            { name: 'Horloge en Bois', description: 'Une horloge murale en bois naturel, parfaite pour une décoration rustique.', price: 180, image: '../../assets/images/produit/horloge.jpeg' },
+            { name: 'Lampe de Table', description: 'Une lampe de table avec un abat-jour élégant pour une atmosphère chaleureuse.', price: 75, image: '../../assets/images/produit/lampeT.jpeg' },
+            { name: 'Table Basse', description: 'Une table basse en verre et métal, alliant design et fonctionnalité.', price: 200, image: '../../assets/images/produit/tableB.jpeg' }
+        ]">
+            <div class="product-image">
+                <img [src]="product.image" [alt]="product.name" loading="lazy">
+            </div>
+            <div class="product-info">
+                <h3>{{product.name}}</h3>
+                <p>{{product.description}}</p>
+                <span class="price">{{product.price}}dt</span>
+                <a routerLink="produit"><button>voir plus de détails</button></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="categories">
+    <h2>Parcourir les catégories</h2>
+    <div class="category-grid">
+        <div class="category-tile" *ngFor="let category of [
+            { name: 'Articles décoratif', image: '../../assets/images/produit/vase.jpeg' },
+            { name: 'Electroménager', image: '../../assets/images/produit/micro.jpeg' },
+            { name: 'Meuble', image: '../../assets/images/produit/lit.jpeg' }
+        ]" [style.backgroundImage]="'url(' + category.image + ')'">
+            <div class="category-content">
+                <h3>{{category.name}}</h3>
+                <a routerLink="produit" class="category-link">Explorer</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<app-footer></app-footer>

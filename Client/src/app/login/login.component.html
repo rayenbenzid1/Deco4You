@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Deco4You</title>
+    <meta name="robots" content="noindex, follow" />
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
+
+</head>
+
+<body>
+    <app-menu></app-menu>
+
+
+
+    <!-- Page Banner Start -->
+    <div class="page-banner section" style="height: 30%; padding-top: 4%;">
+        <div class="container">
+            <div class="page-banner-wrapper text-center">
+                <h2 class="title">Se connecter</h2>
+            </div>
+        </div>
+    </div>
+    <!-- Page Banner End -->
+
+    <!-- Login & Register Start -->
+    <div class="section section-padding-02 mt-n1">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <!-- Login & Register Start -->
+                    <div class="login-register-wrapper">
+                        <h4 class="title">Connectez-vous à votre compte</h4>
+                        <!-- Affichage du message d'erreur ou de succès -->
+                        <div [innerHTML]="messageCommande"></div>
+
+                        <form (ngSubmit)="login()" [formGroup]="loginForm">
+                            <div class="single-form">
+                                <label>Nom d'utilisateur ou email *</label>
+                                <input formControlName="email" type="text">
+                                <div *ngIf="email?.invalid && email?.touched" class="text-danger">
+                                    {{ email?.errors?.['required'] ? 'Email est requis.' : '' }}
+                                    {{ email?.errors?.['email'] ? 'Email invalide.' : '' }}
+                                </div>
+                            </div>
+                            <div class="single-form">
+                                <label>Mot de passe</label>
+                                <input formControlName="mp" type="password">
+                                <div *ngIf="mp?.invalid && mp?.touched" class="text-danger">
+                                    {{ mp?.errors?.['required'] ? 'Mot de passe est requis.' : '' }}
+                                </div>
+                            </div>
+                            <div class="single-form">
+                                <button class="btn btn-primary btn-hover-dark rounded-pill">Se connecter</button>
+                            </div>
+                        </form>
+
+                        <p>Pas de compte ? <a routerLink="/register" routerLinkActive="active" style="font-size: 20px;">Créez-en un ici.</a></p>
+                    </div>
+                    <!-- Login & Register End -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Login & Register End -->
+
+    <app-footer></app-footer>
+
+</body>
+
+</html>

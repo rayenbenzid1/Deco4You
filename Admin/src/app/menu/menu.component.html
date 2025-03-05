@@ -1,0 +1,71 @@
+<!-- Bouton pour ouvrir/fermer le menu (visible uniquement sur les petits écrans) -->
+<button class="menu-toggle-btn" (click)="toggleMenu()">
+  <iconify-icon icon="radix-icons:hamburger-menu"></iconify-icon>
+</button>
+
+<!-- Menu -->
+<aside class="sidebar" [class.active]="isMenuOpen">
+  <button type="button" class="sidebar-close-btn" (click)="toggleMenu()">
+    <iconify-icon icon="radix-icons:cross-2"></iconify-icon>
+  </button>
+  <div>
+    <a routerLink="/" routerLinkActive="active" class="sidebar-logo">
+      <img src="../../assets/images/adminLogo_blue.png" alt="" width="600" style="border-radius: 10px;">
+    </a>
+  </div>
+  <div class="sidebar-menu-area">
+    <ul class="sidebar-menu" id="sidebar-menu">
+      <h5>Menu</h5>
+        
+        <li class="dropdown">
+          <a routerLink="/listeAdmin" routerLinkActive="active">
+            <iconify-icon icon="solar:document-text-outline" class="menu-icon"></iconify-icon>
+            <span>Liste des Administrateurs</span> 
+          </a>
+        </li>
+
+        <li class="dropdown" *ngIf="role=='superAdmin'">
+          <a routerLink="/ajouterAdmin" routerLinkActive="active">
+            <iconify-icon icon="solar:home-smile-angle-outline" class="menu-icon"></iconify-icon>
+            <span>Ajouter Administrateur</span>
+          </a>
+        </li>
+
+        <li class="dropdown">
+          <a routerLink="/listeProduit" routerLinkActive="active">
+            <iconify-icon icon="solar:document-text-outline" class="menu-icon"></iconify-icon>
+            <span>Liste des Produits</span> 
+          </a>
+        </li>
+        
+        <li class="dropdown">
+          <a routerLink="/ajouterProduit" routerLinkActive="active">
+            <iconify-icon icon="solar:home-smile-angle-outline" class="menu-icon"></iconify-icon>
+            <span>Ajouter Produit</span> 
+          </a>
+        </li>        
+        
+        <li class="dropdown">
+          <a routerLink="/listeClient" routerLinkActive="active">
+            <iconify-icon icon="solar:document-text-outline" class="menu-icon"></iconify-icon>
+            <span>Liste des Clients</span> 
+          </a>
+        </li>
+
+        <li class="dropdown">
+          <a routerLink="/listContact" routerLinkActive="active">
+            <iconify-icon icon="solar:document-text-outline" class="menu-icon"></iconify-icon>
+            <span>Liste des Contacts</span> 
+          </a>
+        </li>
+
+        <li class="dropdown">
+          <a routerLink="/listeReservation" routerLinkActive="active">
+            <iconify-icon icon="solar:document-text-outline" class="menu-icon"></iconify-icon>
+            <span>Liste des Réservations</span> 
+          </a>
+        </li>
+  
+      </ul>
+    </div>
+  </aside>

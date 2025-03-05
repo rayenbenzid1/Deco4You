@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from htmldemo.net/barly/contact.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Jan 2025 08:43:38 GMT -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Barly- Fashion eCommerce Bootstrap 5 Template</title>
+    <meta name="robots" content="noindex, follow" />
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
+
+</head>
+
+<body>
+    <app-menu></app-menu>
+
+    <!-- Page Banner Start -->
+    <div class="page-banner section" style="height: 30%; padding-top: 4%;">
+        <div class="container">
+            <div class="page-banner-wrapper text-center">
+                <h2 class="title">Contact</h2>
+            </div>
+        </div>
+    </div>
+    <!-- Page Banner End -->
+
+    <!-- Contact Start -->
+    <div class="section section-padding-02 mt-n10">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <!-- Contact Wrapper Start -->
+                    <div class="contact-wrapper">
+                        <div class="contact-form">
+                            <form id="contact-form" (ngSubmit)="addNewContact()" [formGroup]="ContactForm">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="single-form">
+                                            <input formControlName="nom" type="text" name="name" placeholder="Nom">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="single-form">
+                                            <input formControlName="email" type="email" name="email" placeholder="email">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="single-form">
+                                            <input formControlName="tel" type="text" name="email" placeholder="Tel">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="single-form">
+                                            <input formControlName="sujet" type="text" name="email" placeholder="Sujet">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="single-form">
+                                            <textarea formControlName="message" name="message" placeholder="Message"></textarea>
+                                        </div>
+                                    </div>
+                                    <p class="form-message"></p>
+                                    <div class="col-md-12">
+                                        <div class="single-form">
+                                            <button type="submit" class="btn btn-primary btn-hover-dark rounded-pill">Envoyer Message</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- Contact Wrapper End -->
+                </div>
+                <div class="col-lg-6">
+                    <!-- Contact Wrapper Start -->
+                    <div class="contact-information">
+                        <div class="single-information">
+                            <h5 class="title">Adresse du bureau</h5>
+                            <p>Errahma Menzel Bouzelfa Nabeul Tunisie</p>
+                        </div>
+                        <div class="single-information">
+                            <h5 class="title">Numéro de téléphone</h5>
+                            <p><a href="#">+216 56202555</a></p>
+                        </div>
+                        <div class="single-information">
+                            <h5 class="title">Adresse web</h5>
+                            <p><a href="#">deco4you@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <!-- Contact Wrapper End -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact End -->
+
+    <app-footer></app-footer>
+
+</body>
+
+
+<!-- Mirrored from htmldemo.net/barly/contact.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Jan 2025 08:43:38 GMT -->
+</html>

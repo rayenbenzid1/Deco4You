@@ -1,0 +1,54 @@
+<body>
+    <app-menu></app-menu>
+
+    <!-- Login & Register Start -->
+    <div class="section section-padding-02 mt-n1">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <!-- Login & Register Start -->
+                    <div class="login-register-wrapper">
+                        <h4 class="title">Connectez-vous à votre compte</h4>
+                        <p>Vous avez déjà un compte ? <a routerLink="/login" routerLinkActive="active"
+                                style="font-size: 20px;">Connectez-vous plutôt !</a></p>
+                        <form (ngSubmit)="addNewClient()" [formGroup]="clientForm">
+                            <div class="single-form">
+                                <label>Nom</label>
+                                <input formControlName="nom" type="text">
+                            </div>
+                            <div class="single-form">
+                                <label>Prénom</label>
+                                <input formControlName="prenom" type="text">
+                            </div>
+                            <div class="single-form">
+                                <label>Email</label>
+                                <input formControlName="email" type="text">
+                            </div>
+                            <div class="single-form">
+                                <label>Mot de passe</label>
+                                <input formControlName="mp" type="password">
+                            </div>
+                            <div class="single-form">
+                                <label>Tel</label>
+                                <input formControlName="tel" type="text">
+                            </div>
+                            <div class="single-form">
+                                <label>Adresse</label>
+                                <input formControlName="adresse" type="text">
+                            </div>
+                            <div class="single-form">
+                                <button type="submit"
+                                    class="btn btn-primary btn-hover-dark rounded-pill">Registre</button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- Login & Register End -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Login & Register End -->
+
+    <app-footer></app-footer>
+
+</body>

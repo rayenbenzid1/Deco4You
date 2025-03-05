@@ -1,0 +1,24 @@
+/* Styles pour la table */
+.table-responsive {
+    overflow-x: auto; /* Permet le défilement horizontal */
+    -webkit-overflow-scrolling: touch; /* Améliore le défilement sur les appareils mobiles */
+}
+
+/* Styles pour les cellules de la table */
+.table th,
+.table td {
+    white-space: nowrap; /* Empêche le texte de passer à la ligne */
+}
+
+/* Styles pour les petits écrans */
+@media (max-width: 768px) {
+    .table th,
+    .table td {
+        font-size: 14px; /* Réduire la taille de la police */
+        padding: 8px; /* Réduire le padding */
+    }
+
+    .table-responsive {
+        border: 1px solid #ddd; /* Ajouter une bordure pour une meilleure visibilité */
+    }
+}

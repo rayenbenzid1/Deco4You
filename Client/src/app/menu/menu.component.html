@@ -1,0 +1,62 @@
+<!-- Header Start -->
+<div class="header section d-none d-lg-block">
+
+    <!-- Header Bottom Start -->
+    <div class="header-bottom">
+        <div class="container position-relative">
+            <div class="row align-items-center">
+                <div class="col-lg-1">
+                    <!-- Header Logo Start -->
+                    <div class="header-logo">
+                        <a routerLink="/" routerLinkActive="active"><img src="assets/images/logo/logo.png" width="90" alt=""></a>
+                    </div>
+                    <!-- Header Logo End -->
+                </div>
+                <div class="col-lg-9">
+                    <!-- Primary Menu Start -->
+                    <div class="primary-menu">
+                        <nav>
+                            <ul>
+                                <li>
+                                    <a routerLink="/" routerLinkActive="active">Acceuil</a>
+                                </li>
+
+                                <li>
+                                    <a routerLink="/about" routerLinkActive="active">À propos</a>
+                                </li>
+                                
+                                <li>
+                                    <a routerLink="/produit" routerLinkActive="active">Produit</a>
+                                </li>
+
+                                <li>
+                                    <a routerLink="/contact" routerLinkActive="active">Contactez-nous</a>
+                                </li>
+
+                                <li>
+                                    <a href="/mesreservations" *ngIf="IsloggedIn">Mes réservations</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <!-- Primary Menu End -->
+                </div>
+                <div class="col-lg-2">
+                    <!-- Header Action Start -->
+                    <div class="header-action">
+                        <!-- <a routerLink="/login" routerLinkActive="active" class="action"><i class="icofont-user-alt-7"></i></a> -->
+                        <a href="login" class="title">
+                            <button *ngIf="!IsloggedIn" class="btn btn-primary-4 btn-hover-dark rounded-pill">Connexion</button>
+                        </a>
+                        <a (click)="logout()" class="title">
+                            <button *ngIf="IsloggedIn"  class="btn btn-primary-4 btn-hover-dark rounded-pill">Déconnexion</button>
+                        </a>
+                    </div>
+                    <!-- Header Action End -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header Bottom End -->
+</div>
+<!-- Header End -->

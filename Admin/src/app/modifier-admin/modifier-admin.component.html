@@ -1,0 +1,98 @@
+<!-- meta tags and other links -->
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+
+</head>
+
+<body>
+    <app-menu></app-menu>
+
+    <main class="dashboard-main">
+        <app-header></app-header>
+
+        <div class="dashboard-main-body">
+
+            <div class="row gy-4">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title mb-0">Modifier Admin</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="row gy-3">
+                                <form (ngSubmit)="updateAdmin()" [formGroup]="adminForm">
+                                    <div class="col-12">
+                                        <label class="form-label">Nom</label>
+                                        <div class="icon-field">
+                                            <span class="icon">
+                                                <iconify-icon icon="f7:person"></iconify-icon>
+                                            </span>
+                                            <input formControlName="nom" type="text" name="#0" class="form-control" placeholder="Nom">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label">Prénom</label>
+                                        <div class="icon-field">
+                                            <span class="icon">
+                                                <iconify-icon icon="f7:person"></iconify-icon>
+                                            </span>
+                                            <input formControlName="prenom" type="text" name="#0" class="form-control" placeholder="Prénom">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label">Email</label>
+                                        <div class="icon-field">
+                                            <span class="icon">
+                                                <iconify-icon icon="mage:email"></iconify-icon>
+                                            </span>
+                                            <input formControlName="email" type="email" name="#0" class="form-control" placeholder="Email">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label">Mot de passe</label>
+                                        <div class="icon-field">
+                                            <span class="icon">
+                                                <iconify-icon icon="solar:lock-password-outline"></iconify-icon>
+                                            </span>
+                                            <input formControlName="mp" type="password" name="#0" class="form-control"
+                                                placeholder="********">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label" for="role">Rôle</label>
+                                        <div class="icon-field">
+                                            <select id="role" class="form-select" aria-label="Sélectionner le rôle" formControlName="role" required>
+                                                <option value="" disabled selected>Choisir votre rôle</option>
+                                                <option value="superAdmin">Super Administrateur</option>
+                                                <option value="sousAdmin">Sous Administrateur</option>
+                                            </select>
+                                        </div>
+                                        <!-- Message d'erreur en cas de sélection invalide -->
+                                        <div *ngIf="adminForm.get('role').invalid && adminForm.get('role').touched" class="invalid-feedback">
+                                            Le rôle est obligatoire.
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-12 mt-4">
+                                        <button type="submit" class="btn btn-primary-600">Modifier</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <app-footer></app-footer>
+    </main>
+
+
+</body>
+
+</html>

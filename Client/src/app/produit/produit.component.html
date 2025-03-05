@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from htmldemo.net/barly/blog.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Jan 2025 08:43:33 GMT -->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Barly- Fashion eCommerce Bootstrap 5 Template</title>
+    <meta name="robots" content="noindex, follow" />
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
+
+
+</head>
+
+<body>
+    <app-menu></app-menu>
+
+    <!-- Blog Start -->
+    <div class="section section-padding-02 mt-n10">
+        <div class="container">
+            <!-- Blog Wrapper Start -->
+            <div class="blog-wrapper">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 mb-4" *ngFor="let produit of listeProduit">
+                        <!-- Single Product Card Start -->
+                        <div class="card shadow-sm border-0">
+                            <!-- Product Image -->
+                            <div class="position-relative">
+                                <img [src]="produit.image" alt="Image du produit" class="card-img-top img-fluid"
+                                    style="height: 250px; object-fit: cover; border-radius: 10px 10px 0 0;">
+                            </div>
+                            <!-- Product Content -->
+                            <div class="card-body text-center">
+                                <h5 class="card-title font-weight-bold">{{ produit.nom }}</h5>
+                                <p class="card-text text-muted mb-1">{{ produit.marque }}</p>
+                                <p class="card-text font-weight-bold text-primary">{{ produit.prix }} DT</p>
+                                <p class="card-text text-success">{{ produit.quantite }} articles en stock</p>
+                                <p class="text-muted small">{{ produit.description }}</p>
+                                <!-- Action Buttons -->
+                                <div class="d-grid gap-2">
+                                    <button class="btn btn-primary" type="submit" *ngIf="IsloggedIn"
+                                        (click)="reserver(produit)" style="border-radius: 5px;">Réserver</button>
+                                    <a href="login">
+                                        <button class="btn btn-outline-primary" *ngIf="!IsloggedIn">Connexion</button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Single Product Card End -->
+                    </div>
+                </div>
+            </div>
+            <!-- Blog Wrapper End -->
+        </div>
+    </div>
+    <!-- Blog End -->
+
+
+    <app-footer></app-footer>
+</body>
+
+</html>

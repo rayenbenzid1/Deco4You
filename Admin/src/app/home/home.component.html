@@ -1,0 +1,123 @@
+<!-- meta tags and other links -->
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+
+</head>
+
+<body>
+    <app-menu></app-menu>
+
+    <main class="dashboard-main">
+        <app-header></app-header>
+
+        <div class="dashboard-main-body">
+
+            <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-24">
+                <h6 class="fw-semibold mb-0">Administration</h6>
+            </div>
+
+            <div class="row gy-4">
+                <div class="col-12">
+                    <div class="card radius-12">
+                        <div class="card-body p-16">
+                            <div class="row gy-4">
+                                <div class="col-xxl-3 col-xl-4 col-sm-6">
+                                    <div
+                                        class="px-20 py-16 shadow-none radius-8 h-100 gradient-deep-1 left-line line-bg-primary position-relative overflow-hidden">
+                                        <div
+                                            class="d-flex flex-wrap align-items-center justify-content-between gap-1 mb-8">
+                                            <div>
+                                                <span
+                                                    class="mb-2 fw-medium text-secondary-light text-md">Administrateurs</span>
+                                                <h6 class="fw-semibold mb-1">{{totalAdmins}}</h6>
+                                            </div>
+                                            <span
+                                                class="w-44-px h-44-px radius-8 d-inline-flex justify-content-center align-items-center text-2xl mb-12 bg-primary-100 text-primary-600">
+                                                <i class="ri-account-circle-fill"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xxl-3 col-xl-4 col-sm-6">
+                                    <div
+                                        class="px-20 py-16 shadow-none radius-8 h-100 gradient-deep-2 left-line line-bg-lilac position-relative overflow-hidden">
+                                        <div
+                                            class="d-flex flex-wrap align-items-center justify-content-between gap-1 mb-8">
+                                            <div>
+                                                <span class="mb-2 fw-medium text-secondary-light text-md">Clients</span>
+                                                <h6 class="fw-semibold mb-1">{{totalClients}}</h6>
+                                            </div>
+                                            <span
+                                                class="w-44-px h-44-px radius-8 d-inline-flex justify-content-center align-items-center text-2xl mb-12 bg-lilac-200 text-lilac-600">
+                                                <i class="ri-shield-user-line"></i>
+                                            </span>
+                                        </div> 
+                                    </div>
+                                </div>
+                                <div class="col-xxl-3 col-xl-4 col-sm-6">
+                                    <div
+                                        class="px-20 py-16 shadow-none radius-8 h-100 gradient-deep-3 left-line line-bg-success position-relative overflow-hidden">
+                                        <div
+                                            class="d-flex flex-wrap align-items-center justify-content-between gap-1 mb-8">
+                                            <div>
+                                                <span
+                                                    class="mb-2 fw-medium text-secondary-light text-md">Produits</span>
+                                                <h6 class="fw-semibold mb-1">{{totalProduit}}</h6>
+                                            </div>
+                                            <span
+                                                class="w-44-px h-44-px radius-8 d-inline-flex justify-content-center align-items-center text-2xl mb-12 bg-success-200 text-success-600">
+                                                <i class="ri-shopping-cart-fill"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xxl-3 col-xl-4 col-sm-6">
+                                    <div
+                                        class="px-20 py-16 shadow-none radius-8 h-100 gradient-deep-4 left-line line-bg-warning position-relative overflow-hidden">
+                                        <div
+                                            class="d-flex flex-wrap align-items-center justify-content-between gap-1 mb-8">
+                                            <div>
+                                                <span class="mb-2 fw-medium text-secondary-light text-md">Réservations</span>
+                                                <h6 class="fw-semibold mb-1">{{totalReservations}}</h6>
+                                            </div>
+                                            <span
+                                                class="w-44-px h-44-px radius-8 d-inline-flex justify-content-center align-items-center text-2xl mb-12 bg-warning-focus text-warning-600">
+                                                <i class="ri-check-double-line"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="stats-section" style="padding-top: 20px;">
+                <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-24">
+                    <h6 class="fw-semibold mb-0">Statistiques des Réservations par Produit</h6>
+                </div>
+                <div style="width: 70%; margin: auto;">
+                    <canvas baseChart
+                        [data]="barChartData"
+                        [options]="barChartOptions"
+                        [type]="barChartType">
+                    </canvas>
+                </div>
+            </div>            
+    
+        </div>
+        <app-footer></app-footer>
+    </main>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,105 @@
+<!-- meta tags and other links -->
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<!-- Mirrored from wowdash.wowtheme7.com/demo/form-layout.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 14 Jan 2025 08:06:01 GMT -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wowdash - Bootstrap 5 Admin Dashboard HTML Template</title>
+
+</head>
+
+<body>
+    <app-menu></app-menu>
+
+    <main class="dashboard-main">
+        <app-header></app-header>
+
+        <div class="dashboard-main-body">
+
+            <div class="row gy-4">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title mb-0">Modifier Produit</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="row gy-3">
+                                <form (ngSubmit)="updateProduit()" [formGroup]="produitForm">
+                                    <div class="col-12">
+                                        <label class="form-label">Nom</label>
+                                        <div class="icon-field">
+                                            <span class="icon">
+                                                <iconify-icon icon="fluent-mdl2:product" width="20" height="20"></iconify-icon>
+                                            </span>
+                                            <input formControlName="nom" type="text" name="#0" class="form-control" placeholder="Nom">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label">Description</label>
+                                        <div class="icon-field">
+                                            <span class="icon">
+                                                <iconify-icon icon="fluent-mdl2:product" width="20" height="20"></iconify-icon>
+                                            </span>
+                                            <input formControlName="description" type="text" name="#0" class="form-control" placeholder="Description">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label">Marque</label>
+                                        <div class="icon-field">
+                                            <span class="icon">
+                                                <iconify-icon icon="fluent-mdl2:product" width="20" height="20"></iconify-icon>
+                                            </span>
+                                            <input formControlName="marque" type="text" name="#0" class="form-control" placeholder="Marque">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label">Prix</label>
+                                        <div class="icon-field">
+                                            <span class="icon">
+                                                <iconify-icon icon="material-symbols:price-change-outline-rounded" width="20" height="20"></iconify-icon>
+                                            </span>
+                                            <input formControlName="prix" type="number" name="#0" class="form-control"
+                                                placeholder="Prix du produit">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label">Quantite</label>
+                                        <div class="icon-field">
+                                            <span class="icon">
+                                                <iconify-icon icon="hugeicons:text-number-sign" width="20" height="20"></iconify-icon>
+                                            </span>
+                                            <input formControlName="quantite" type="number" name="#0" class="form-control"
+                                                placeholder="Quantite du produit">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label">Image</label>
+                                        <div class="icon-field">
+                                            <span class="icon">
+                                                <iconify-icon icon="lucide:image" width="20" height="20"></iconify-icon>
+                                            </span>
+                                            <input formControlName="image" type="file" (change)="onSelectFile($event)" name="#0" class="form-control"
+                                                placeholder="l'image du produit'">
+                                        </div>
+                                    </div>
+                                    <div class="col-12 mt-4">
+                                        <button type="submit" class="btn btn-primary-600">Modifier le produit</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <app-footer></app-footer>
+    </main>
+
+
+</body>
+
+</html>

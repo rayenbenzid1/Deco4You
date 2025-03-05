@@ -1,0 +1,62 @@
+<!-- meta tags and other links -->
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png" sizes="16x16">
+</head>
+
+<body>
+    <app-menu></app-menu>
+
+    <main class="dashboard-main">
+        <app-header></app-header>
+
+        <div class="dashboard-main-body">
+
+            <div class="card basic-data-table">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">Liste des clients</h5>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive"> <!-- Ajoutez cette div -->
+                        <table class="table bordered-table mb-0" id="dataTable" data-page-length='10'>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Id</th>
+                                    <th scope="col">Nom</th>
+                                    <th scope="col">Prenom</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Tel</th>
+                                    <th scope="col">Adresse</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let client of listeClient">
+                                    <td>{{client.id}}</td>
+                                    <td>
+                                        <h6 class="text-md mb-0 fw-medium flex-grow-1">{{client.nom}}</h6>
+                                    </td>
+                                    <td>{{client.prenom}}</td>
+                                    <td>{{client.email}}</td>
+                                    <td>{{client.tel}}</td>
+                                    <td>{{client.adresse}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <app-footer></app-footer>
+    </main>
+
+    
+</body>
+
+</html>
